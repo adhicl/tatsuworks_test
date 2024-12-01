@@ -1,0 +1,56 @@
+VisualElement {
+}
+
+.parent {
+    flex-grow: 1;
+    -unity-font: url('project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&guid=fca1e6db804d7e64b964dd7dbdb30178&type=3#NotInter-Regular');
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    left: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    height: auto;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-cubic;
+    max-width: none;
+    min-width: auto;
+    max-height: none;
+    min-height: auto;
+    position: relative;
+    flex-basis: auto;
+}
+
+.info-label {
+    color: rgb(166, 166, 166);
+    font-size: 14px;
+}
+
+.toggle-btn {
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    background-color: rgba(106, 106, 106, 0);
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    margin-right: 10px;
+}
+
+.valueTalent {
+    flex-grow: 2;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+.turn-off {
+    translate: 110% 0;
+}

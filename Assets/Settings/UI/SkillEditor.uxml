@@ -1,0 +1,55 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Settings/UI/SkillEditor.uss?fileID=7433441132597879392&amp;guid=e46089bab5ceed34fbda5188e5300407&amp;type=3#SkillEditor" />
+    <ui:VisualElement name="VisualElement" class="parent">
+        <ui:Label tabindex="-1" text="Skill Editor&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=fca1e6db804d7e64b964dd7dbdb30178&amp;type=3#NotInter-Regular&apos;); color: rgb(255, 255, 255); font-size: 20px; -unity-text-align: upper-center; -unity-font-style: bold;" />
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+            <ui:VisualElement style="flex-grow: 1; max-width: 150px; min-width: 150px; width: 150px;">
+                <ui:Label tabindex="-1" text="Available Skill&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" class="info-label" />
+                <ui:ListView focusable="true" name="skillList" tooltip="pick skill created" style="flex-grow: 1;" />
+                <ui:Button text="NEW" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnCreate" style="background-color: rgb(91, 91, 91); flex-grow: 1; max-height: 100px;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
+                    <ui:ScrollView horizontal-scroller-visibility="Hidden" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap;">
+                        <ui:TextField picking-mode="Ignore" label="Name" max-length="24" tooltip="skill name" auto-correction="false" name="skillName" style="flex-shrink: 0; flex-grow: 0;" />
+                        <ui:TextField picking-mode="Ignore" label="Description&#x9;" tooltip="skill description" tabindex="1" multiline="true" max-length="300" name="skillDescription" style="height: 113px;" />
+                        <ui:DoubleField label="Mana Cost" value="0" tooltip="mana cost for casting skill" name="skillManaCost" tabindex="2" />
+                        <ui:DoubleField label="Cooldown" value="0" tooltip="Skill cooldown in second" name="skillCooldown" tabindex="3" />
+                        <ui:Label tabindex="-1" text="Skill Damage" parse-escape-sequences="true" display-tooltip-when-elided="true" class="info-label" style="margin-bottom: 10px; margin-top: 10px;" />
+                        <ui:EnumField label="Damage Type" type="DamageType, Assembly-CSharp" tooltip="damage type" name="skillDamageType" tabindex="4" />
+                        <ui:DoubleField label="Damage" value="0" name="skillDamage" tooltip="total point of damage" tabindex="5" />
+                        <ui:EnumField label="Range" type="RangeType, Assembly-CSharp" name="skillRangeType" tooltip="determine how skill will be cast" tabindex="6" />
+                        <ui:Label tabindex="-1" text="Additional Talent" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="info-label" style="margin-bottom: 10px; margin-top: 10px;" />
+                        <ui:VisualElement style="flex-grow: 1; flex-direction: row; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; margin-top: 1px; margin-right: 1px; margin-bottom: 1px; margin-left: 1px;">
+                            <ui:Toggle label="Scale Strength" name="toggleScaleStrength" value="false" tabindex="7" class="toggle-btn" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); background-color: rgba(106, 106, 106, 0); padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; margin-right: 0; flex-grow: 1;" />
+                            <ui:Slider picking-mode="Ignore" label="Strength Scaling" value="10" high-value="100" name="sliderScaleStrength" show-input-field="true" inverted="false" tooltip="percentage scale to strength" class="valueTalent turn-off" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 1; flex-direction: row; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; margin-top: 1px; margin-right: 1px; margin-bottom: 1px; margin-left: 1px;">
+                            <ui:Toggle label="Scale Magic" name="toggleScaleMagic" value="false" tabindex="8" class="toggle-btn" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); background-color: rgba(106, 106, 106, 0); padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; margin-right: 0; flex-grow: 1;" />
+                            <ui:Slider picking-mode="Ignore" label="Magic Scaling" value="10" high-value="100" name="sliderScaleMagic" show-input-field="true" tooltip="percentage scale to magic" class="valueTalent turn-off" style="flex-grow: 2;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 1; flex-direction: row; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; margin-top: 1px; margin-right: 1px; margin-bottom: 1px; margin-left: 1px;">
+                            <ui:Toggle label="Poison" name="togglePoison" value="false" tooltip="skill will poison enemy" tabindex="9" class="toggle-btn" style="flex-grow: 1;" />
+                            <ui:DoubleField label="Poison Damage" value="0" name="poisonDamage" tooltip="damage per tick from poison" class="valueTalent turn-off" style="flex-shrink: 0; flex-grow: 2;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 1; flex-direction: row; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; margin-top: 1px; margin-right: 1px; margin-bottom: 1px; margin-left: 1px; align-self: center; justify-content: center;">
+                            <ui:Toggle label="Stun" name="toggleStun" value="false" tabindex="10" class="toggle-btn" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); background-color: rgba(106, 106, 106, 0); padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; align-items: auto; margin-right: 10px; justify-content: flex-start; align-self: auto; flex-grow: 1;" />
+                            <ui:DoubleField label="Stun Length" value="0" name="stunHold" tooltip="how long enemy will be stuned" class="valueTalent turn-off" style="flex-shrink: 0; flex-grow: 2;" />
+                        </ui:VisualElement>
+                        <ui:VisualElement style="flex-grow: 1; flex-direction: row; padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; margin-top: 1px; margin-right: 1px; margin-bottom: 1px; margin-left: 1px;">
+                            <ui:Toggle label="Slow" name="toggleSlow" value="false" tabindex="11" class="toggle-btn" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); background-color: rgba(106, 106, 106, 0); padding-top: 2px; padding-right: 2px; padding-bottom: 2px; padding-left: 2px; margin-right: 10px; flex-grow: 1;" />
+                            <ui:DoubleField label="Slow Length" value="0" name="slowHold" tooltip="how long enemy will be slowed" class="valueTalent turn-off" />
+                        </ui:VisualElement>
+                        <ui:Label tabindex="-1" text="visual" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="info-label" style="margin-bottom: 10px; margin-top: 10px;" />
+                        <uie:ObjectField label="Icon" tooltip="icon for ability" type="UnityEngine.Sprite, UnityEngine.CoreModule" name="iconField" tabindex="12" allow-scene-objects="false" />
+                        <uie:ObjectField label="Prefab Effect" tooltip="ability effect" type="UnityEngine.GameObject, UnityEngine.CoreModule" name="prefabField" tabindex="13" allow-scene-objects="false" />
+                    </ui:ScrollView>
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-between; min-height: 100px;">
+                    <ui:Button text="TEST SKILL" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnTest" style="background-color: rgb(91, 91, 91); flex-grow: 1;" />
+                    <ui:Button text="SAVE" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btnSave" style="background-color: rgb(91, 91, 91); flex-grow: 1; margin-right: 2px; margin-left: 8px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
